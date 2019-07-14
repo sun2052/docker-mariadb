@@ -12,8 +12,8 @@ fi
 apk add --no-cache tini mariadb mariadb-client
 
 # enable networking
-sed -i \
-    -e 's|^skip-networking$|#skip-networking|i' \
+sed -ri \
+    -e 's|^(skip-networking)$|#\1|g' \
     /etc/my.cnf.d/mariadb-server.cnf
 
 # don't reverse lookup hostnames, they are usually another containers

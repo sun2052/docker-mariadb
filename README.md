@@ -5,6 +5,7 @@
 ```bash
 mkdir -p /var/lib/mysql
 docker run -d --restart=always \
+    --name mariadb \
     -p 127.0.0.1:3306:3306 \
     -v /var/lib/mysql:/var/lib/mysql \
     mariadb
@@ -12,7 +13,7 @@ docker run -d --restart=always \
 
 ```
     host: 127.0.0.1:3306
-username: root  
+username: root
 password: root
 ```
 
